@@ -58,21 +58,21 @@ public class BookController {
         return ResponseEntity.status(HttpStatus.OK).headers(header).body(listOfBook);
     }
 
-    @PutMapping("/UpdateBook-by-id/{id}")
-    public ResponseEntity<Book> UpdateBookById(@RequestBody Book book,@PathVariable("id") int bookid) {
-
-      Book updatedBook =bookService.updateBookbyId(book,bookid);
-      HttpHeaders header = new HttpHeaders();
-        header.add("desc", " book got updated  by id");
-        return ResponseEntity.status(HttpStatus.OK).headers(header).body(updatedBook);
-    }
-
-
-    @DeleteMapping("/Book-by-id/{id}")
-    public ResponseEntity<Void> deleteBookById(@PathVariable("id") int bookid) {
-        bookService.deleteBookById(bookid);
-        HttpHeaders header = new HttpHeaders();
-        header.add("desc", "delete book by id");
-        return ResponseEntity.status(HttpStatus.OK).headers(header).build();
-    }
+//    @PutMapping("/UpdateBook-by-id/{id}")
+//    public ResponseEntity<Book> UpdateBookById(@RequestBody Book book,@PathVariable("id") int bookid) {
+//
+//      Book updatedBook =bookService.updateBookbyId(book,bookid);
+//      HttpHeaders header = new HttpHeaders();
+//        header.add("desc", " book got updated  by id");
+//        return ResponseEntity.status(HttpStatus.OK).headers(header).body(updatedBook);
+//    }
+//
+//
+//    @DeleteMapping("/Book-by-id/{id}")
+//    public ResponseEntity<Void> deleteBookById(@PathVariable("id") int bookid) {
+//        bookService.deleteBookById(bookid);
+//        HttpHeaders header = new HttpHeaders();
+//        header.add("desc", "delete book by id");
+//        return ResponseEntity.status(HttpStatus.OK).headers(header).build();
+//    }
 }
